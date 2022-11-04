@@ -73,14 +73,39 @@
                         <button type="button" class="btn btn-info" onClick="window.location.reload();">Rafraîchir l'image</button>
                         </div>
 
+                        <!-- test -->
+                        <div class="drop-img">
+                            <style>
+                                #image_drop_area{
+                                    width: 400px;
+                                    height: 225px;
+                                    border: 1px solid black;
+                                    background-position: center;
+                                    background-size: cover;
+                                    box-sizing: border-box;
+                                }
+                            </style>
+                            <input type = "file" hidden>
+                            <p>Déposer une image</p>   
+                            <div id="image_drop_area"></div>   
+                            <p id="file_name"></p>
+
+                            <button id="detect_obj">Detect obj  </button>
+                        </div>
+
+                        <!-- test -->
+
+
+
+
                         <!-- drag & drop area start -->
-                        <div class="img-fluid drag-area">
+                        <!-- <div class="img-fluid drag-area">
                             <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
                             <header>Glisser et déposer pour afficher une image puis cliquer sur le bouton Détection</header>
                             <span>ou</span>
                             <button>Choisir une image</button>
                             <input type="file" hidden>
-                        </div>
+                        </div> -->
                         <!-- drag & drop area end -->
 
                     </div>
@@ -102,7 +127,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="js/scripts TEST.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
