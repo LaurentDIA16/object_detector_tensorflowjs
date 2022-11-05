@@ -14,12 +14,14 @@ let detector;
 button.onclick = ()=>{
   input.click(); //if user click on the button then the input also clicked
 }
+
 input.addEventListener("change", function(){
   //getting user select file and [0] this means if user select multiple files then we'll select only the first one
   file = this.files[0];
   dropArea.classList.add("active");
   showFile(); //calling function
 });
+
 //If user Drag File Over DropArea
 dropArea.addEventListener("dragover", (event)=>{
   event.preventDefault(); //preventing from default behaviour
@@ -31,6 +33,7 @@ dropArea.addEventListener("dragleave", ()=>{
   dropArea.classList.remove("active");
   dragText.textContent = "Drag & Drop to Upload File";
 });
+
 //If user drop File on DropArea
 dropArea.addEventListener("drop", (event)=>{
   event.preventDefault(); //preventing from default behaviour
@@ -38,6 +41,7 @@ dropArea.addEventListener("drop", (event)=>{
   file = event.dataTransfer.files[0];
   showFile(); //calling function
 });
+
 function showFile(){
   let fileType = file.type; //getting selected file type
   let validExtensions = ["image/jpeg", "image/jpg", "image/png"]; //adding some valid image extensions in array
@@ -66,10 +70,9 @@ function showFile(){
 // //Code dernière version fonctionnelle
 //let img;
 
-
 //Charger le modèle
 function preload() {
-    img = loadImage(imgTag);
+    //img = loadImage(imgTag);
     detector = ml5.objectDetector('cocossd');
 }
 

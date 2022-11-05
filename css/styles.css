@@ -11703,3 +11703,23 @@ footer {
   color: white;
   text-align: center; */
 }
+
+
+.drag-drop-zone{
+  position: relative;
+  width: 500px;
+  height: 350px;
+  background-color: rgba(13, 202, 240, 0.2);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.center{
+  margin:auto;
+  float:none;
+}
+
