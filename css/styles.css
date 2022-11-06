@@ -87,7 +87,8 @@ body {
   /* background-color: var(--bs-body-bg); */
   -webkit-text-size-adjust: 100%;
   /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
-  min-height: 100vh;
+  min-height: 100%;
+  /* padding-bottom: 20px; */
 }
 
 hr {
@@ -11325,7 +11326,7 @@ section {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: transparent;
+  background-color: rgba(0,191,255,0.2);
 }
 #mainNav .navbar-brand {
   font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -11531,21 +11532,28 @@ section.cta:before {
     max-width: 17rem;
   }
 }
-footer a {
-  color: rgba(255, 255, 255, 0.5);
-  text-decoration: none;
-}
-footer a:hover, footer a:active, footer a:focus {
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: underline;
-}
+
+
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 9.5rem;
+  padding-bottom: 5rem;
+  max-width: 100%;
+  /* max-height: 100%; */
+  min-height: 100vh;
+  /* background-image: linear-gradient(135deg, #97ABFF 10%, #123597 100%); */
+  background-image: url(/assets/img/bg_01.png);
+/* }
 
 .masthead {
   /* background-color: black; */
   /* background-color: linear-gradient(135deg, #97ABFF 10%, #123597 100%); */
-  background-image: url(/assets/img/bg_01.png);
+  /* background-image: url(/assets/img/bg_01.png);
   padding-top: 9.5rem;
-  padding-bottom: 10rem;
+  padding-bottom: 17rem; */
 }
 .masthead .masthead-device-mockup {
   display: flex;
@@ -11638,14 +11646,8 @@ footer a:hover, footer a:active, footer a:focus {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-/* body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  /* background-image: linear-gradient(135deg, #97ABFF 10%, #123597 100%); */
-  /* background-image: url(/assets/img/bg_01.png); */
-/* } */
+
+
 
 .drag-area{
   border: 2px dashed #fff;
@@ -11696,14 +11698,26 @@ footer a:hover, footer a:active, footer a:focus {
 
 footer {
   position: fixed;
+
   width: 100%;
-  /* background-color: transparent; */
-  /* left: 0;
-  bottom: 0;
+  height: 2rem;
   color: white;
-  text-align: center; */
+  background-color: #994C00;
 }
 
+/* footer{
+  position: absolute;
+  bottom: 0;
+} */
+
+footer a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+footer a:hover, footer a:active, footer a:focus {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: underline;
+}
 
 .drag-drop-zone{
   position: relative;
@@ -11723,3 +11737,15 @@ footer {
   float:none;
 }
 
+.instruction{
+  box-sizing: border-box;
+  background: rgba(244, 207, 34, 0.36);
+  margin: 1rem;
+  padding: 1rem;
+  line-height: 90%;
+}
+
+.instruction h5{
+  box-sizing: border-box;
+  background: rgba(244, 207, 34, 0.5);
+}

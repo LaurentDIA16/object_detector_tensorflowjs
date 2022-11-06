@@ -7,13 +7,16 @@
         <meta name="author" content="" />
         <title>New Age - Start Bootstrap Theme</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        
         <!-- Google fonts-->
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+        
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="/css/styles.css" rel="stylesheet" />
 
@@ -24,80 +27,241 @@
         <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
     </head>
     <body id="page-top">
-        <!-- Navigation-->
+        <!-- Navigation start-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
             <div class="container px-5">
-                <a class="navbar-brand fw-bold" href="#page-top">YAYATOIST</a>
+                <a class="navbar-brand fw-bold">YAYATOIST</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="bi-list"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <!-- <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#features">Features</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#download">Download</a></li>
-                    </ul> -->
-                    <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-                        <span class="d-flex align-items-center">
-                            <!-- <i class="bi-chat-text-fill me-2"></i> -->
-                            <span class="small">Liste d'objets identifiable</span>
-                        </span>
-                    </button>
+                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <!-- <li class="nav-item"><a class="nav-link me-lg-3" href="#features">Features</a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link me-lg-3" href="#download">Download</a></li> -->
+                        <button type="button" class="btn btn-success" onClick="window.location.reload();">
+                            <i class="bi bi-arrow-clockwise"></i>
+                            <span>Rafraîchir l'image</span> 
+                        </button>
+                    </ul>
+                    
                 </div>
             </div>
         </nav>
-        
-        <!-- Mashead header-->
+        <!-- Navigation end-->
+
+        <!-- Text presentation en-tête start-->
         <header class="masthead">
             <div class="container px-5">
-                <div class="row gx-5 align-items-center">
+                <div class="row gx-5">
                     <div class="col-lg-6">
-                        <!-- Mashead text and app badges-->
-                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                        <!-- text presentation start-->
+                        <div class="mb-1 mb-lg-0 text-center text-lg-start">
                             <h1 class="display-1 lh-1 mb-3">Identifie un objet</h1>
-                            <p class="lead fw-normal text-muted mb-5">Notre modèle d'Intelligence Artificielle identifie et traduit en anglais les objets</p>
-                            <div class="d-flex flex-column flex-lg-row align-items-center">
-                                <button type="button" class="btn btn-success btn-lg rounded-pill">Détection</button>
-                                <button type="button" class="btn btn-primary btn-lg rounded-pill">Traduction</button>
-                                <div id="wordFr"></div>
-                                <div id="wordEn"></div>
+                            <p class="lead fw-normal text-muted mb-3">Le modèle d'Intelligence Artificielle identifie les objets 
+                            et ensuite une traduction en anglais est proposé</p>
+                            <div class="instruction">
+                                <h5>
+                                    Mode d'emploi: <br>
+                                    
+                                        <h6></h6><li>Vérifier tout d'abord que ce que vous voulez identifier soit dans la "Liste d'objets identifiables" (ci-dessous).</li> <br>
+                                        <li>Ensuite, glisser-déposer votre photo (.jpeg, .jpg, .png) sur le cadre bleu. </li><br>
+                                        <li>Cliquez sur "Lancez la détection" afin d'identifier l'objet sur la photo. </li><br>
+                                        <li>Ensuite, cliquez  sur "Lancez la traduction" pour avoir la traduction en anglais. </li><br>
+                                        <li>Si vous voulez répéter la traduction, cliquez autant que souhaité sur "Lancez la traduction". </li><br>
+                                        <li>Avant de déposer une nouvelle photo, cliquez sur "Rafraîchir l'image". </li>
+                                    
+                                </h5>
                             </div>
                         </div>
+                        <!-- text presentation end-->
+
+                        <!-- Button trigger modal start -->
+                        <div class="mb-lg-0 text-center text-lg-start px-3 mb-3">
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <i class="bi bi-chat-square-text me-2"></i>
+                                <span class="fw-bold">Liste d'objets identifiables</span>
+                            </button>
+                        </div>
+                        <!-- Button trigger modal end -->
+
+                        <!-- Modal start -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Les objets identifiables</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul>
+                                        <li>personne</li>
+                                        <li>vélo</li>
+                                        <li>voiture</li>
+                                        <li>moto</li>
+                                        <li>avion</li>
+                                        <li>bus</li>
+                                        <li>former</li>
+                                        <li>un camion</li>
+                                        <li>bateau</li>
+                                        <li>feu de circulation</li>
+                                        <li>bouche d'incendie</li>
+                                        <li>panneau stop</li>
+                                        <li>parcmètre</li>
+                                        <li>banc</li>
+                                        <li>oiseau</li>
+                                        <li>chat</li>
+                                        <li>chien</li>
+                                        <li>cheval</li>
+                                        <li>mouton</li>
+                                        <li>vache</li>
+                                        <li>éléphant</li>
+                                        <li>ours</li>
+                                        <li>zèbre</li>
+                                        <li>girafe</li>
+                                        <li>sac à dos</li>
+                                        <li>parapluie</li>
+                                        <li>Sac à main</li>
+                                        <li>cravate</li>
+                                        <li>valise</li>
+                                        <li>frisbee</li>
+                                        <li>des skis</li>
+                                        <li>snowboard</li>
+                                        <li>balle de sport</li>
+                                        <li>batte de baseball</li>
+                                        <li>gant de baseball</li>
+                                        <li>planche à roulette</li>
+                                        <li>planche de surf</li>
+                                        <li>raquette de tennis</li>
+                                        <li>bouteille</li>
+                                        <li>verre de vin</li>
+                                        <li>Coupe</li>
+                                        <li>fourchette</li>
+                                        <li>couteau</li>
+                                        <li>cuillère</li>
+                                        <li>bol</li>
+                                        <li>banane</li>
+                                        <li>Pomme</li>
+                                        <li>sandwich</li>
+                                        <li>orange</li>
+                                        <li>brocoli</li>
+                                        <li>carotte</li>
+                                        <li>Hot-dog</li>
+                                        <li>pizza</li>
+                                        <li>Donut</li>
+                                        <li>gâteau</li>
+                                        <li>chaise</li>
+                                        <li>canapé</li>
+                                        <li>plante en pot</li>
+                                        <li>lit</li>
+                                        <li>table à manger</li>
+                                        <li>toilette</li>
+                                        <li>la télé</li>
+                                        <li>portable</li>
+                                        <li>Souris</li>
+                                        <li>télécommande</li>
+                                        <li>clavier</li>
+                                        <li>téléphone portable</li>
+                                        <li>four micro onde</li>
+                                        <li>four</li>
+                                        <li>grille-pain</li>
+                                        <li>évier</li>
+                                        <li>réfrigérateur</li>
+                                        <li>livre</li>
+                                        <li>horloge</li>
+                                        <li>vase</li>
+                                        <li>les ciseaux</li>
+                                        <li>ours en peluche</li>
+                                        <li>sèche cheveux</li>
+                                        <li>brosse à dents</li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- Modal end-->
                     </div>
 
                     <!-- section drag & drop start -->
                     <div class="col-lg-6">
-                    
-                        <!-- bouton de recharge de la page html -->
-                        <div class="mb-3 text-center">
-                        <button type="button" class="btn btn-info" onClick="window.location.reload();">Rafraîchir l'image</button>
-                        </div>
+                        <div class="text-center">
+                        <!-- zone drag & drop start -->
+                            <div class="drag-drop-zone center">
+                                <div class="drop-img">
+                                    <style>
+                                        #image_drop_area{
+                                            position: absolute;
+                                            top: 25px;
+                                            left: 50px;
+                                            width: 400px;
+                                            height: 300px;
+                                            background: rgba(8, 194, 251, 0.3);
+                                            background-position: center;
+                                            background-size: cover;
+                                            box-sizing: border-box;
+                                            border-radius: 5px;
+                                        }
 
-                        <!-- drag & drop area start -->
-                        <div class="img-fluid drag-area">
-                            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                            <header>Glisser et déposer pour afficher une image puis cliquer sur le bouton Détection</header>
-                            <span>ou</span>
-                            <button>Choisir une image</button>
-                            <input type="file" hidden>
+                                        #image_drop_area:hover{
+                                            opacity: 0.5;
+                                            }
+                                    </style>
+                                
+                                    <input type = "file" hidden>
+                                    <div id="image_drop_area"></div>
+                                </div>
+                            </div>     
                         </div>
-                        <!-- drag & drop area end -->
+                        <!-- zone drag & drop end -->
 
+                        <!-- zone interaction start -->
+                        <div class="text-center detection-traduction">
+                            <h5 class="display-8 text-center pt-2">
+                                <i class="bi bi-arrow-up-circle"></i>
+                                Déposer une image
+                                <i class="bi bi-image"></i>
+                            </h5>
+
+                            <div class="text-center align-items-center">
+                                <button type="button" class="btn btn-info btn-lg mb-2" id="detect_obj">
+                                    <i class="bi bi-person-bounding-box"></i>
+                                    Lancez la détection
+                                </button>
+                                <button type="button" class="btn btn-primary btn-lg rounded-pill mb-2">
+                                    <i class="bi bi-megaphone-fill"></i>
+                                    Lancez la traduction
+                                </button>
+                            </div>
+                            <!-- zone interaction end -->
+
+                            <!-- zone identification & traduction start -->
+                            <h3 class="text-center text-muted">Le modèle a identifié sur cette photo:</h3> 
+                            <h4 class="lead fw-normal text-dark py-1" id="obj_detect"></h4>
+                            <h4 class="lead fw-normal text-dark" id="wordEn"></h4>
+                            <h3 class="text-center text-muted">avec un indice de confiance de:</h3>   
+                            <h4 class="lead fw-normal text-dark" id="obj_confidence"></h4>    
+                            <input type="hidden" id="wordFr"></div>
+                            <!-- zone identification & traduction start -->
+                        </div>
                     </div>
                     <!-- section drag & drop end -->
 
                 </div>
             </div>
         </header>
+        <!-- Text presentation en-tête end-->
         
-        <!-- Footer-->
-        <footer class="bg-primary text-center py-1">
-            <div class="container px-5">
-                <div class="text-white-50 small">
-                    <div class="mb-2">&copy; YAYATOIST 2022. All Rights Reserved.</div>
-                </div>
-            </div>
-        </footer>
+        <!-- Footer
+        <footer class="">
+            <div class="container text-center">
+                    <div>&copy; YAYATOIST 2022. All Rights Reserved.</div>
+                    <div class="text-white-100">
+                    <div>&copy; YAYATOIST 2022. All Rights Reserved.</div> -->
+            <!-- </div>
+        </footer> -->
         
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

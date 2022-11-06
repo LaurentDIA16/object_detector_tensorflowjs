@@ -50,72 +50,39 @@
         <!-- Mashead header-->
         <header class="masthead">
             <div class="container px-5">
-                <div class="row gx-5">
+                <div class="row gx-5 align-items-center">
                     <div class="col-lg-6">
                         <!-- Mashead text and app badges-->
-                        <div class="mb-1 mb-lg-0 text-center text-lg-start">
+                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
                             <h1 class="display-1 lh-1 mb-3">Identifie un objet</h1>
-                            <p class="lead fw-normal text-muted mb-3">Notre modèle d'Intelligence Artificielle identifie et traduit en anglais les objets</p>
-                            
-                        
-                        
-                        
+                            <p class="lead fw-normal text-muted mb-5">Notre modèle d'Intelligence Artificielle identifie et traduit en anglais les objets</p>
+                            <div class="d-flex flex-column flex-lg-row align-items-center">
+                                <button type="button" class="btn btn-success btn-lg rounded-pill">Détection</button>
+                                <button type="button" class="btn btn-primary btn-lg rounded-pill">Traduction</button>
+                                <div id="wordFr"></div>
+                                <div id="wordEn"></div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- section drag & drop start -->
                     <div class="col-lg-6">
                     
-                        <!-- bouton de recharge de la page html
+                        <!-- bouton de recharge de la page html -->
                         <div class="mb-3 text-center">
                         <button type="button" class="btn btn-info" onClick="window.location.reload();">Rafraîchir l'image</button>
-                        <p class="text-center">Déposer une image</p>  
-                        </div> -->
-
-                        <div class="text-center">
-                        <!-- test -->
-                            <div class="drag-drop-zone center">
-                                <div class="drop-img">
-                                    <style>
-                                        #image_drop_area{
-                                            position: absolute;
-                                            top: 25px;
-                                            left: 50px;
-                                            width: 400px;
-                                            height: 300px;
-                                            background: rgba(8, 194, 251, 0.3);
-                                            background-position: center;
-                                            background-size: cover;
-                                            box-sizing: border-box;
-                                            border-radius: 5px;
-                                        }
-
-                                        #image_drop_area:hover{
-                                            opacity: 0.5;
-                                            }
-                                    </style>
-                                
-                                    <input type = "file" hidden>
-                                    
-                                    <div id="image_drop_area"></div>
-                                </div>
-                            </div>     
-                        </div><!-- test -->
-
-                        <div class="text-center detection-traduction">
-                            <h5 class="display-8 text-center pt-2">Déposer une image</h5>
-                            <div class="text-center align-items-center">
-                                <button type="button" class="btn btn-info btn-lg mb-2" id="detect_obj">Lancez la détection</button>
-                                <button type="button" class="btn btn-primary btn-lg rounded-pill mb-2">Lancez la traduction</button>
-                            </div>
-                            <h3 class="text-center text-muted">Le modèle a identifié sur cette photo:</h3> 
-                            <h4 class="lead fw-normal text-dark py-1" id="obj_detect"></h4>
-                            <!-- <p id="obj_detect"></p> -->
-                            <h3 class="lead fw-normal text-dark" id="wordEn"></h3>
-                            <h3 class="text-center text-muted">avec un indice de confiance de:</h2>   
-                            <h3 class="lead fw-normal text-dark" id="obj_confidence"></h3>    
-                            <input type="hidden" id="wordFr"></div>
                         </div>
+
+                        <!-- drag & drop area start -->
+                        <div class="img-fluid drag-area">
+                            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <header>Glisser et déposer pour afficher une image puis cliquer sur le bouton Détection</header>
+                            <span>ou</span>
+                            <button>Choisir une image</button>
+                            <input type="file" hidden>
+                        </div>
+                        <!-- drag & drop area end -->
+
                     </div>
                     <!-- section drag & drop end -->
 
@@ -124,7 +91,7 @@
         </header>
         
         <!-- Footer-->
-        <footer class="bg-primary text-center py-1">
+        <footer class="bg-primary text-center py-1 fixed-bottom">
             <div class="container px-5">
                 <div class="text-white-50 small">
                     <div class="mb-2">&copy; YAYATOIST 2022. All Rights Reserved.</div>
@@ -135,7 +102,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts TEST.js"></script>
+        <script src="js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
