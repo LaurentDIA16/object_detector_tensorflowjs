@@ -7,3 +7,5 @@ Mon POC est axé sur l'utilisation d'un Modèle pré-entrainé de Machine Learni
 
 La 2e étape du projet consistera à utiliser la caméra (intégré au robot) en temps réel et d'identifier les objets avec toujours la possibilité de le traduire en anglais.
 La particularité de cette étape consistera à créer son propre jeu de données (DataSet) et d'entraîner le modèle sur ce nouveau jeu de données
+
+Ici j'utilise ml5 avec le modèle pré-entrainé COCOSSD
