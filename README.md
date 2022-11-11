@@ -9,3 +9,11 @@ La 2e étape du projet consistera à utiliser la caméra (intégré au robot) en
 La particularité de cette étape consistera à créer son propre jeu de données (DataSet) et d'entraîner le modèle sur ce nouveau jeu de données
 
 Ici j'utilise ml5 avec le modèle pré-entrainé COCOSSD
+
+Axe d'amélioration pour une prochaine mise à jour:
+ . En ajoutant une photo après une autre sans cliquer sur le bouton "Rafraîchir l'image" qui est juste un refresh de la page, lors du clique sur le bouton "Traduction", cela va répéter la traduction autant de fois que l'on a ajouté d'image
+ 
+ . Ajouter un bouton "Charger une image", qui va proposer d'aller chercher une image dans ses propres dossiers de l'ordinateur
+ 
+ Pour une version 2.0:
+ . Ajouter la version avec l'utilisation de la webcam qui va détecter et identifier en temps réel les objets avec toujours la possibilités de traduire en anglais l'objets identifiés
